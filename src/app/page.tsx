@@ -83,7 +83,7 @@ const Portfolio = () => {
             color="primary"
             fullWidth
             sx={{ mt: 2 }}
-            href="/cv.pdf"
+            href="/CV_Yahirdev13.pdf"
             download="CV_Yahirdev13.pdf"
           >
             Download CV
