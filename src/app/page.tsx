@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { AppBar, Toolbar, Typography, Container, CssBaseline, ThemeProvider, createTheme, Button, Grid, Card, CardContent, Avatar } from "@mui/material";
 
