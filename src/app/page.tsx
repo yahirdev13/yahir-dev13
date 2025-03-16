@@ -84,7 +84,7 @@ const Portfolio = () => {
             fullWidth
             sx={{ mt: 2 }}
             href="/cv.pdf"
-            download="YahirAlberto_CV.pdf"
+            download="CV_Yahirdev13.pdf"
           >
             Download CV
           </Button>
