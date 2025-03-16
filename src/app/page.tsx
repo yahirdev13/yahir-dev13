@@ -3,18 +3,18 @@ import React from "react";
 import { AppBar, Toolbar, Typography, Container, CssBaseline, ThemeProvider, createTheme, Button, Grid, Card, CardContent, Avatar, Box, IconButton } from "@mui/material";
 import { GitHub, Instagram, Search } from "@mui/icons-material";
 import { motion } from "framer-motion";
+import "@fontsource/jetbrains-mono";
 
-// Tema personalizado basado en la imagen
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#00FFA3", // Verde neón basado en la imagen
+      main: "#00FFA3", // Verde neón 
     },
     secondary: {
       main: "#B0BEC5", // Gris claro
     },
     background: {
-      default: "#0D1117", // Fondo oscuro basado en la imagen
+      default: "#0D1117", // Fondo oscuro
       paper: "#161B22",
     },
     text: {
@@ -23,7 +23,7 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: "Poppins, sans-serif",
+    fontFamily: "JetBrains Mono, monospace",
     h3: {
       fontWeight: 700,
     },
@@ -40,7 +40,7 @@ const Portfolio = () => {
       <AppBar position="static" color="transparent" elevation={0}>
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1, color: "#00FFA3" }}>
-            {"<C/> SinanTokmak"}
+            {"<Yahirdev13/> "}
           </Typography>
           <Button color="primary">Home</Button>
           <Button color="primary">Blogs</Button>
@@ -51,8 +51,6 @@ const Portfolio = () => {
             <Instagram />
           </IconButton>
           <IconButton color="primary">
-          </IconButton>
-          <IconButton color="primary">
             <GitHub />
           </IconButton>
         </Toolbar>
@@ -60,14 +58,8 @@ const Portfolio = () => {
 
       <Container sx={{ textAlign: "center", py: 5 }}>
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.5 }}>
-          <Typography variant="h2" color="primary" gutterBottom>
-            Developer
-          </Typography>
-          <Typography variant="h3" gutterBottom>
-            Hey, I'm <span style={{ color: "#00FFA3" }}>Sinan</span>, Full-Stack Developer
-          </Typography>
-          <Typography variant="body1" sx={{ maxWidth: "600px", margin: "auto" }}>
-            I help businesses grow by crafting amazing web experiences. If you're looking for a developer that likes to get stuff done, let's talk.
+          <Typography variant="h2" gutterBottom>
+            Hey, I'm <span style={{ color: "#00FFA3" }}>Yahir Alberto</span>, Full-Stack Developer
           </Typography>
         </motion.div>
       </Container>
@@ -76,17 +68,24 @@ const Portfolio = () => {
         <Card sx={{ backgroundColor: "#161B22", p: 3, borderRadius: "16px", border: "2px solid #00FFA3" }}>
           <Avatar src="/avatar.jpg" sx={{ width: 100, height: 100, margin: "auto" }} />
           <Typography variant="h5" color="primary" textAlign="center" mt={2}>
-            Sinan
+            Yahir Alberto
           </Typography>
           <Typography variant="body2" textAlign="center" color="textSecondary">
             Full-stack developer
           </Typography>
           <Box sx={{ mt: 2, textAlign: "center" }}>
-            <Typography variant="body2">abdulrahman_sinan@hotmail.com</Typography>
-            <Typography variant="body2">Turkey | Freelancer</Typography>
-            <Typography variant="body2">www.sinantokmak.com</Typography>
+            <Typography variant="body2">yahir.dev13@gmail.com</Typography>
+            <Typography variant="body2">Mexico | Freelancer</Typography>
+            <Typography variant="body2">www.yahirdev13.com</Typography>
           </Box>
-          <Button variant="outlined" color="primary" fullWidth sx={{ mt: 2 }}>
+          <Button
+            variant="outlined"
+            color="primary"
+            fullWidth
+            sx={{ mt: 2 }}
+            href="/cv.pdf"
+            download="YahirAlberto_CV.pdf"
+          >
             Download CV
           </Button>
         </Card>
