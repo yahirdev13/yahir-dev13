@@ -1,9 +1,10 @@
 "use client";
-import React from "react";
-import { AppBar, Toolbar, Typography, Container, CssBaseline, ThemeProvider, createTheme, Button, Box, IconButton, Grid, Card, CardContent } from "@mui/material";
-import { GitHub, LinkedIn } from "@mui/icons-material";
+import React, { useState, useEffect } from "react";
+import { AppBar, Toolbar, Typography, Container, CssBaseline, ThemeProvider, createTheme, Button, Box, IconButton, Grid, Card, CardContent, Stack, Drawer, List, ListItem, ListItemText, Slide } from "@mui/material";
+import { GitHub, LinkedIn, Menu } from "@mui/icons-material";
 import { motion } from "framer-motion";
 import "@fontsource/jetbrains-mono";
+import { button } from "framer-motion/client";
 
 const theme = createTheme({
   palette: {
@@ -20,6 +21,9 @@ const theme = createTheme({
     text: {
       primary: "#FFFFFF",
       secondary: "#8B949E",
+    },
+    common: {
+      white: "#FFFFFF", // Definiendo color blanco correctamente
     },
   },
   typography: {
@@ -38,27 +42,66 @@ const scrollToSection = (id: string) => {
   if (section) section.scrollIntoView({ behavior: "smooth" });
 };
 
+
 const Portfolio = () => {
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen);
+  };
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.history.scrollRestoration = "manual";
+    }
+  }, []);
+
+  const drawer = (
+    <Slide direction="down" in={mobileOpen} mountOnEnter unmountOnExit>
+      <Box sx={{ width: 250, backgroundColor: "#161B22", height: "100vh", color: "#FFFFFF" }}>
+        <List>
+          {["Home", "About Me", "Technologies", "Projects"].map((text) => (
+            <ListItem component="button" key={text} onClick={() => { scrollToSection(text.toLowerCase().replace(/ /g, "")); setMobileOpen(false); }}>
+              <ListItemText primary={text} sx={{ textAlign: "center" }} />
+            </ListItem>
+          ))}
+        </List>
+      </Box>
+    </Slide>);
+
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <AppBar position="absolute" color="transparent" elevation={0}>
+      <AppBar position="fixed" color="transparent" elevation={0}>
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1, color: "#00FFA3" }}>
             {"<Yahirdev13/> "}
           </Typography>
-          <Button color="primary" onClick={() => scrollToSection("home")}>Home</Button>
-          <Button color="primary" onClick={() => scrollToSection("about")}>About Me</Button>
-          <Button color="primary" onClick={() => scrollToSection("technologies")}>Technologies</Button>
-          <Button color="primary" onClick={() => scrollToSection("projects")}>Projects</Button>
-          <IconButton color="primary" href="https://linkedin.com/in/yahirdev13" target="_blank" rel="noopener noreferrer">
-            <LinkedIn />
-          </IconButton>
-          <IconButton color="primary" href="https://github.com/yahirdev13" target="_blank" rel="noopener noreferrer">
-            <GitHub />
+          <Box sx={{ display: { xs: "none", md: "flex" } }}>
+            <Button color="primary" onClick={() => scrollToSection("home")}>Home</Button>
+            <Button color="primary" onClick={() => scrollToSection("about")}>About Me</Button>
+            <Button color="primary" onClick={() => scrollToSection("technologies")}>Technologies</Button>
+            <Button color="primary" onClick={() => scrollToSection("projects")}>Projects</Button>
+            <IconButton color="primary" href="https://linkedin.com/in/yahirdev13" target="_blank" rel="noopener noreferrer">
+              <LinkedIn />
+            </IconButton>
+            <IconButton color="primary" href="https://github.com/yahirdev13" target="_blank" rel="noopener noreferrer">
+              <GitHub />
+            </IconButton>
+          </Box>
+          <IconButton
+            color="primary"
+            sx={{ display: { xs: "block", md: "none" } }}
+            onClick={handleDrawerToggle}
+          >
+            <Menu />
           </IconButton>
         </Toolbar>
       </AppBar>
+      <Drawer anchor="right" open={mobileOpen} onClose={handleDrawerToggle}>
+        {drawer}
+      </Drawer>
 
       {/* Hero Section */}
       <Container id="home" sx={{ textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", height: "90vh", mt: 5 }}>
@@ -128,15 +171,15 @@ const Portfolio = () => {
 
       {/* Footer Section */}
       <Box sx={{ py: 2, textAlign: "center", backgroundColor: "#0A0D12", color: "#FFFFFF", fontSize: "0.8rem" }}>
-        <Typography variant="body2">yahir.dev13@gmail.com</Typography>
-
-        <IconButton color="primary" href="https://linkedin.com/in/yahirdev13" target="_blank" rel="noopener noreferrer">
-          <LinkedIn />
-        </IconButton>
-        <IconButton color="primary" href="https://github.com/yahirdev13" target="_blank" rel="noopener noreferrer">
-          <GitHub />
-        </IconButton>
-
+        <Stack direction="row" spacing={2} justifyContent="center" alignItems="center">
+          <Typography variant="body2">yahir.dev13@gmail.com</Typography>
+          <IconButton color="primary" href="https://linkedin.com/in/yahirdev13" target="_blank" rel="noopener noreferrer">
+            <LinkedIn />
+          </IconButton>
+          <IconButton color="primary" href="https://github.com/yahirdev13" target="_blank" rel="noopener noreferrer">
+            <GitHub />
+          </IconButton>
+        </Stack>
       </Box>
     </ThemeProvider>
   );
