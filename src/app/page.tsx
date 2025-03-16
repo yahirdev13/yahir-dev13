@@ -151,22 +151,61 @@ const Portfolio = () => {
       {/* Technologies Section */}
       <Container id="technologies" sx={{ py: 8, textAlign: "center" }}>
         <Typography variant="h3" color="primary" gutterBottom>
-          Technologies
+          Technologies and Tools
         </Typography>
-        <Grid container spacing={2} justifyContent="center">
-          {["JavaScript", "React.js", "Next.js", "Node.js", "MongoDB", "Docker"].map((tech, index) => (
-            <Grid item xs={12} sm={6} md={4} key={index}>
-              <Card sx={{ backgroundColor: "#161B22", textAlign: "center", p: 1 }}>
-                <CardContent>
-                  <Typography variant="h6" color="primary">
-                    {tech}
-                  </Typography>
-                </CardContent>
+        <Grid container spacing={3} justifyContent="center" alignItems="stretch">
+          {[
+            { name: "HTML", icon: "html5" },
+            { name: "CSS", icon: "css3" },
+            { name: "JavaScript", icon: "javascript" },
+            { name: "React.js", icon: "react" },
+            { name: "Vue", icon: "vuedotjs" },
+            { name: "Next.js", icon: "nextdotjs" },
+            { name: "Node.js", icon: "nodedotjs" },
+            { name: "MongoDB", icon: "mongodb" },
+            { name: "Docker", icon: "docker" },
+            { name: "Java", icon: "openjdk" },
+            { name: "Flutter", icon: "flutter" },
+            { name: "Figma", icon: "figma" },
+            { name: "MySQL", icon: "mysql" },
+            { name: "AWS", icon: "amazonwebservices" },
+            { name: "Firebase", icon: "firebase" },
+            { name: "Python", icon: "python" },
+            { name: "linux", icon: "linux" },
+            { name: "Unity", icon: "unity" },
+            { name: "Postman", icon: "postman" },
+
+
+          ].map((tech, index) => (
+            <Grid item xs={12} sm={6} md={3} lg={2} key={index}>
+              <Card sx={{
+                backgroundColor: "#161B22",
+                textAlign: "center",
+                py: 3,
+                px: 1,
+                height: "100%",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center"
+              }}>
+                <img
+                  src={`https://cdn.simpleicons.org/${tech.icon}`}
+                  alt={tech.name}
+                  width="50"
+                  height="50"
+                  style={{ marginBottom: "12px" }}
+                />
+                <Typography variant="h6" color="primary">
+                  {tech.name}
+                </Typography>
               </Card>
             </Grid>
           ))}
         </Grid>
       </Container>
+
+
 
       {/* Projects Section */}
       <Container id="projects" sx={{ py: 8, textAlign: "center", backgroundColor: "#161B22" }}>
