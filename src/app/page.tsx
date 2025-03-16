@@ -62,6 +62,7 @@ const Portfolio = () => {
         <List>
           {["Home", "About Me", "Technologies", "Projects"].map((text) => (
             <ListItem component="button" key={text} onClick={() => { scrollToSection(text.toLowerCase().replace(/ /g, "")); setMobileOpen(false); }}>
+
               <ListItemText primary={text} sx={{ textAlign: "center" }} />
             </ListItem>
           ))}
