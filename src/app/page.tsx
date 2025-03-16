@@ -99,7 +99,29 @@ const Portfolio = () => {
           </IconButton>
         </Toolbar>
       </AppBar>
-      {drawer}
+      {mobileOpen && (
+        <Slide direction="down" in={mobileOpen} mountOnEnter unmountOnExit>
+          <Box sx={{ width: "100%", backgroundColor: "#161B22", position: "fixed", top: "64px", left: 0, zIndex: 1200 }}>
+            <List>
+              {["Home", "About Me", "Technologies", "Projects"].map((text) => (
+                <ListItem component="button" key={text} onClick={() => { scrollToSection(text.toLowerCase().replace(/ /g, "")); setMobileOpen(false); }}>
+
+
+                  <ListItemText primary={text} sx={{ textAlign: "center", color: "#FFFFFF" }} />
+                </ListItem>
+              ))}
+              <Stack direction="row" spacing={2} justifyContent="center" sx={{ my: 2 }}>
+                <IconButton color="primary" href="https://linkedin.com/in/yahirdev13" target="_blank" rel="noopener noreferrer">
+                  <LinkedIn />
+                </IconButton>
+                <IconButton color="primary" href="https://github.com/yahirdev13" target="_blank" rel="noopener noreferrer">
+                  <GitHub />
+                </IconButton>
+              </Stack>
+            </List>
+          </Box>
+        </Slide>
+      )}
 
 
       {/* Hero Section */}
