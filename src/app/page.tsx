@@ -9,7 +9,7 @@ import { button } from "framer-motion/client";
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#00FFA3", // Verde neón 
+      main: "#009DFF", // azul
     },
     secondary: {
       main: "#B0BEC5", // Gris claro
@@ -76,7 +76,7 @@ const Portfolio = () => {
       <CssBaseline />
       <AppBar position="fixed" sx={{ backgroundColor: "rgba(22, 27, 34, 0.5)" }} elevation={0}>
         <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1, color: "#00FFA3" }}>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1, color: "#00A9FF " }}>
             {"<Yahirdev13/> "}
           </Typography>
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
@@ -129,7 +129,7 @@ const Portfolio = () => {
       <Container id="home" sx={{ textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", height: "90vh", mt: 5 }}>
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.5 }}>
           <Typography variant="h2" gutterBottom>
-            Hey, I'm <span style={{ color: "#00FFA3" }}>Yahir Alberto</span>, Full-Stack Developer
+            Hey, I'm <span style={{ color: "#00A9FF " }}><b>Yahir Alberto</b></span>, Full-Stack Developer
           </Typography>
           <Button variant="contained" color="primary" sx={{ mt: 2, px: 6, py: 2, fontSize: "1.2rem" }} href="/CV_Yahirdev13.pdf" download="CV_Yahirdev13.pdf">
             DOWNLOAD CV
