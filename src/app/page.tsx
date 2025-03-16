@@ -73,7 +73,7 @@ const Portfolio = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <AppBar position="fixed" color="transparent" elevation={0}>
+      <AppBar position="fixed" sx={{ backgroundColor: "rgba(22, 27, 34, 0.5)" }} elevation={0}>
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1, color: "#00FFA3" }}>
             {"<Yahirdev13/> "}
@@ -99,9 +99,8 @@ const Portfolio = () => {
           </IconButton>
         </Toolbar>
       </AppBar>
-      <Drawer anchor="right" open={mobileOpen} onClose={handleDrawerToggle}>
-        {drawer}
-      </Drawer>
+      {drawer}
+
 
       {/* Hero Section */}
       <Container id="home" sx={{ textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", height: "90vh", mt: 5 }}>
