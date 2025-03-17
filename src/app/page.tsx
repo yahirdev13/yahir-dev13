@@ -4,7 +4,6 @@ import { AppBar, Toolbar, Typography, Container, CssBaseline, ThemeProvider, cre
 import { GitHub, LinkedIn, Menu } from "@mui/icons-material";
 import { motion } from "framer-motion";
 import "@fontsource/jetbrains-mono";
-import { button } from "framer-motion/client";
 
 const theme = createTheme({
   palette: {
@@ -100,6 +99,7 @@ const Portfolio = () => {
           </IconButton>
         </Toolbar>
       </AppBar>
+
       {mobileOpen && (
         <Slide direction="down" in={mobileOpen} mountOnEnter unmountOnExit>
           <Box sx={{ width: "100%", backgroundColor: "#161B22", position: "fixed", top: "64px", left: 0, zIndex: 1200 }}>
@@ -138,13 +138,15 @@ const Portfolio = () => {
       </Container>
 
       {/* About Me Section */}
-      <Container id="about" sx={{ py: 8, textAlign: "center", backgroundColor: "#161B22" }}>
-        <Typography variant="h3" color="primary" gutterBottom>
+      <Container id="about" sx={{ py: 10, textAlign: "center", backgroundColor: "#161B22" }}>
+        <Typography variant="h3" color="primary" gutterBottom sx={{ fontSize: "2.5rem", fontWeight: "bold" }}>
           About Me
         </Typography>
-        <Typography variant="body1" color="textSecondary" sx={{ maxWidth: 800, margin: "auto" }}>
-          I am a passionate Full-Stack Developer specializing in building scalable, high-performance web applications.
-          With experience in modern technologies and frameworks, I aim to deliver seamless and efficient user experiences.
+        <Typography variant="body1" color="textSecondary" sx={{ maxWidth: 900, margin: "auto", fontSize: "1.1rem", lineHeight: 1.6 }}>
+          I'm a highly skilled and passionate Full-Stack Developer with expertise in designing and developing scalable, high-performance web applications.
+          My proficiency spans across front-end and back-end technologies, crafting seamless user experiences with modern frameworks and robust server-side solutions.
+          With a strong foundation in JavaScript, TypeScript, React, Next.js, and Node.js, I specialize in building efficient, maintainable, and future-proof applications.
+          My focus is on delivering clean, modular code that optimizes performance and enhances user interactions, ensuring applications are both intuitive and powerful.
         </Typography>
       </Container>
 
@@ -158,13 +160,16 @@ const Portfolio = () => {
             { name: "HTML", icon: "html5" },
             { name: "CSS", icon: "css3" },
             { name: "JavaScript", icon: "javascript" },
+            { name: "TypeScript", icon: "typescript" },
             { name: "React.js", icon: "react" },
             { name: "Vue", icon: "vuedotjs" },
             { name: "Next.js", icon: "nextdotjs" },
             { name: "Node.js", icon: "nodedotjs" },
+            { name: "Material UI", icon: "mui" },
             { name: "MongoDB", icon: "mongodb" },
             { name: "Docker", icon: "docker" },
             { name: "Java", icon: "openjdk" },
+            { name: "Spring Boot", icon: "spring" },
             { name: "Flutter", icon: "flutter" },
             { name: "Figma", icon: "figma" },
             { name: "MySQL", icon: "mysql" },
@@ -174,6 +179,9 @@ const Portfolio = () => {
             { name: "linux", icon: "linux" },
             { name: "Unity", icon: "unity" },
             { name: "Postman", icon: "postman" },
+            { name: "Git", icon: "git" },
+            { name: "GitHub", icon: "github" },
+            { name: "Alexa Skill", icon: "amazonalexa" },
 
 
           ].map((tech, index) => (
@@ -206,29 +214,55 @@ const Portfolio = () => {
       </Container>
 
 
-
       {/* Projects Section */}
-      <Container id="projects" sx={{ py: 8, textAlign: "center", backgroundColor: "#161B22" }}>
-        <Typography variant="h3" color="primary" gutterBottom>
-          Projects
-        </Typography>
-        <Grid container spacing={2} justifyContent="center">
-          {["Portfolio Website", "E-Commerce Platform", "Chatbot AI"].map((project, index) => (
-            <Grid item xs={12} sm={6} md={4} key={index}>
-              <Card sx={{ backgroundColor: "#1E1E1E", textAlign: "center", p: 1 }}>
-                <CardContent>
-                  <Typography variant="h6" color="primary">
-                    {project}
-                  </Typography>
-                  <Typography variant="body2" color="textSecondary">
-                    A brief description of {project} goes here.
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-      </Container>
+      <Box id="projects" sx={{ py: 8, textAlign: "center", backgroundColor: "#12181D", width: "100vw" }}>
+        <Container>
+          <Typography variant="h3" color="primary" gutterBottom sx={{ fontSize: "2.5rem", fontWeight: "bold" }}>
+            Projects
+          </Typography>
+          <Grid container spacing={4} justifyContent="center">
+            {[
+              {
+                title: "Portfolio Website",
+                description: "A fully responsive portfolio showcasing expertise in modern web development, built with Next.js for static site generation and optimized routing, Material UI for sleek, adaptive styling, and Framer Motion for interactive animations.",
+                image: "/images/portfolio.png",
+                technologies: ["typescript", "nextdotjs", "mui", "react"]
+              },
+              {
+                title: "QarDeal website",
+                description: "A nationwide car rental web application designed to provide seamless vehicle booking services across Mexico. Built with modern web technologies to ensure a user-friendly experience, secure transactions, and efficient fleet management.",
+                image: "/ecommerce.png",
+                technologies: ["typescript", "nextdotjs", "mui", "react", "mongodb", "nodedotjs"]
+              },
+            ].map((project, index) => (
+              <Grid item xs={12} key={index}>
+                <Card sx={{ display: "flex", backgroundColor: "#1E1E1E", alignItems: "center", p: 3, borderRadius: "12px", minHeight: 180 }}>
+                  <Box component="img" src={project.image} alt={project.title} sx={{ width: 200, height: 150, objectFit: "cover", borderRadius: "8px" }} />
+                  <CardContent sx={{ flex: 1, textAlign: "left", ml: 3 }}>
+                    <Typography variant="h5" color="primary" sx={{ fontWeight: "bold", mb: 3 }}>
+                      {project.title}
+                    </Typography>
+                    <Typography variant="body1" color="textSecondary" sx={{ mb: 2, fontSize: "1rem" }}>
+                      {project.description}
+                    </Typography>
+                    <Box sx={{ display: "flex", gap: 1, mt: 1 }}>
+                      {project.technologies.map((technologies, idx) => (
+                        <img
+                          src={`https://cdn.simpleicons.org/${project.technologies[idx]}`}
+                          width="24"
+                          height="24"
+                          style={{ marginRight: "8px" }}
+                        />
+                      ))}
+                    </Box>
+                  </CardContent>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
+      </Box>
+
 
       {/* Footer Section */}
       <Box sx={{ py: 2, textAlign: "center", backgroundColor: "#0A0D12", color: "#FFFFFF", fontSize: "0.8rem" }}>
