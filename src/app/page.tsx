@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { AppBar, Toolbar, Typography, Container, CssBaseline, ThemeProvider, createTheme, Button, Box, IconButton, Grid, Card, CardContent, Stack, Drawer, List, ListItem, ListItemText, Slide } from "@mui/material";
-import { GitHub, LinkedIn, Menu } from "@mui/icons-material";
+import { GitHub, LinkedIn, Menu, Email } from "@mui/icons-material";
 import { motion } from "framer-motion";
 import "@fontsource/jetbrains-mono";
 
@@ -131,9 +131,20 @@ const Portfolio = () => {
           <Typography variant="h2" gutterBottom>
             Hey, I'm <span style={{ color: "#00A9FF " }}><b>Yahir Alberto</b></span>, Full-Stack Developer
           </Typography>
-          <Button variant="contained" color="primary" sx={{ mt: 2, px: 6, py: 2, fontSize: "1.2rem" }} href="/CV_Yahirdev13.pdf" download="CV_Yahirdev13.pdf">
-            DOWNLOAD CV
-          </Button>
+          <Box sx={{ display: "flex", alignItems: "center", gap: 2, mt: 2 }}>
+            <Button variant="contained" color="primary" sx={{ px: 4, py: 2, fontSize: "1.2rem" }} href="/CV_Yahirdev13.pdf" download="CV_YahirDiaz.pdf">
+              DOWNLOAD CV
+            </Button>
+            <IconButton color="primary" href="https://linkedin.com/in/yahirdev13" target="_blank" rel="noopener noreferrer">
+              <LinkedIn />
+            </IconButton>
+            <IconButton color="primary" href="https://github.com/yahirdev13" target="_blank" rel="noopener noreferrer">
+              <GitHub />
+            </IconButton>
+            <IconButton color="primary" href="mailto:yahir.dev13@gmail.com">
+              <Email />
+            </IconButton>
+          </Box>
         </motion.div>
       </Container>
 
