@@ -224,9 +224,7 @@ const Portfolio = () => {
         </Grid>
       </Container>
 
-      <Box>
-      <iframe width="1080px" height="720px" src="https://xtusubs.com/iframe.php?onliview=109cf85bc966b9d210d6" scrolling="no"></iframe>
-      </Box>
+     
 
 
       {/* Projects Section */}
