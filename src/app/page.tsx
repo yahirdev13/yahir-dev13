@@ -225,7 +225,7 @@ const Portfolio = () => {
       </Container>
 
       <Box>
-      <iframe width="1080px" height="720px" src="https://xtusubs.com/iframe.php?onliview=109cf85bc966b9d210d6" frameborder="0px" scrolling="no"></iframe>
+      <iframe width="1080px" height="720px" src="https://xtusubs.com/iframe.php?onliview=109cf85bc966b9d210d6" scrolling="no"></iframe>
       </Box>
 
 
