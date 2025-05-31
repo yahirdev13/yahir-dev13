@@ -154,10 +154,9 @@ const Portfolio = () => {
           About Me
         </Typography>
         <Typography variant="body1" color="textSecondary" sx={{ maxWidth: 900, margin: "auto", fontSize: "1.1rem", lineHeight: 1.6 }}>
-          I'm a highly skilled and passionate Full-Stack Developer with expertise in designing and developing scalable, high-performance web applications.
-          My proficiency spans across front-end and back-end technologies, crafting seamless user experiences with modern frameworks and robust server-side solutions.
-          With a strong foundation in JavaScript, TypeScript, React, Next.js, and Node.js, I specialize in building efficient, maintainable, and future-proof applications.
-          My focus is on delivering clean, modular code that optimizes performance and enhances user interactions, ensuring applications are both intuitive and powerful.
+          Full Stack Developer con experiencia en tecnologías web, he diseñado interfaces atractivas y responsivas. He trabajado como freelancer creando sitios web y aplicaciones para pymes, coordinando proyectos de forma autónoma al definir requerimientos, establecer cronogramas e integrar servicios externos, asegurando interfaces limpias, tiempos de carga rápidos y entregas de alta calidad en plazos ajustados.
+          <br /><br />
+        
         </Typography>
       </Container>
 
@@ -224,7 +223,7 @@ const Portfolio = () => {
         </Grid>
       </Container>
 
-     
+
 
 
       {/* Projects Section */}
@@ -244,9 +243,16 @@ const Portfolio = () => {
               {
                 title: "QarDeal website",
                 description: "A nationwide car rental web application designed to provide seamless vehicle booking services across Mexico. Built with modern web technologies to ensure a user-friendly experience, secure transactions, and efficient fleet management.",
-                image: "/ecommerce.png",
+                image: "/images/Qardeal.png",
                 technologies: ["typescript", "nextdotjs", "mui", "react", "mongodb", "nodedotjs"]
               },
+              {
+                title: "Tersoft Cotizador",
+                description: "Web application for quoting Odoo implementations, featuring seamless integrations with email and Google Sheets, and secure Google account login. Designed for efficiency, automation, and an intuitive user experience.",
+                image: "/images/Cotizador.png",
+                technologies: ["javascript", "nextdotjs", "mui", "react", "nodedotjs"]
+              },
+
             ].map((project, index) => (
               <Grid item xs={12} key={index}>
                 <Card sx={{ display: "flex", backgroundColor: "#1E1E1E", alignItems: "center", p: 3, borderRadius: "12px", minHeight: 180 }}>
@@ -259,9 +265,10 @@ const Portfolio = () => {
                       {project.description}
                     </Typography>
                     <Box sx={{ display: "flex", gap: 1, mt: 1 }}>
-                      {project.technologies.map((technologies, idx) => (
+                      {project.technologies.map((technology, idx) => (
                         <img
-                          src={`https://cdn.simpleicons.org/${project.technologies[idx]}`}
+                          key={technology}
+                          src={`https://cdn.simpleicons.org/${technology}`}
                           width="24"
                           height="24"
                           style={{ marginRight: "8px" }}
