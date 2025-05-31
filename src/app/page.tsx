@@ -132,7 +132,7 @@ const Portfolio = () => {
             Hey, I'm <span style={{ color: "#00A9FF " }}><b>Yahir Alberto</b></span>, Full-Stack Developer
           </Typography>
           <Box sx={{ display: "flex", alignItems: "center", gap: 2, mt: 2 }}>
-            <Button variant="contained" color="primary" sx={{ px: 4, py: 2, fontSize: "1.2rem" }} href="/CV_Yahirdev13.pdf" download="CV_YahirDiaz.pdf">
+            <Button variant="contained" color="primary" sx={{ px: 4, py: 2, fontSize: "1.2rem" }} href="/CV_yahirDiaz.pdf" download="CV_YahirDiaz.pdf">
               DOWNLOAD CV
             </Button>
             <IconButton color="primary" href="https://linkedin.com/in/yahirdev13" target="_blank" rel="noopener noreferrer">
