@@ -255,28 +255,34 @@ const Portfolio = () => {
 
             ].map((project, index) => (
               <Grid item xs={12} key={index}>
-                <Card sx={{ display: "flex", backgroundColor: "#1E1E1E", alignItems: "center", p: 3, borderRadius: "12px", minHeight: 180 }}>
-                  <Box component="img" src={project.image} alt={project.title} sx={{ width: 200, height: 150, objectFit: "cover", borderRadius: "8px" }} />
-                  <CardContent sx={{ flex: 1, textAlign: "left", ml: 3 }}>
-                    <Typography variant="h5" color="primary" sx={{ fontWeight: "bold", mb: 3 }}>
-                      {project.title}
-                    </Typography>
-                    <Typography variant="body1" color="textSecondary" sx={{ mb: 2, fontSize: "1rem" }}>
-                      {project.description}
-                    </Typography>
-                    <Box sx={{ display: "flex", gap: 1, mt: 1 }}>
-                      {project.technologies.map((technology, idx) => (
-                        <img
-                          key={technology}
-                          src={`https://cdn.simpleicons.org/${technology}`}
-                          width="24"
-                          height="24"
-                          style={{ marginRight: "8px" }}
-                        />
-                      ))}
-                    </Box>
-                  </CardContent>
-                </Card>
+                <motion.div
+                  whileHover={{ scale: 1.03, boxShadow: "0 8px 32px 0 rgba(0, 157, 255, 0.25)" }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  style={{ borderRadius: "12px" }}
+                >
+                  <Card sx={{ display: "flex", backgroundColor: "#1E1E1E", alignItems: "center", p: 3, borderRadius: "12px", minHeight: 180 }}>
+                    <Box component="img" src={project.image} alt={project.title} sx={{ width: 200, height: 150, objectFit: "cover", borderRadius: "8px" }} />
+                    <CardContent sx={{ flex: 1, textAlign: "left", ml: 3 }}>
+                      <Typography variant="h5" color="primary" sx={{ fontWeight: "bold", mb: 3 }}>
+                        {project.title}
+                      </Typography>
+                      <Typography variant="body1" color="textSecondary" sx={{ mb: 2, fontSize: "1rem" }}>
+                        {project.description}
+                      </Typography>
+                      <Box sx={{ display: "flex", gap: 1, mt: 1 }}>
+                        {project.technologies.map((technology, idx) => (
+                          <img
+                            key={technology}
+                            src={`https://cdn.simpleicons.org/${technology}`}
+                            width="24"
+                            height="24"
+                            style={{ marginRight: "8px" }}
+                          />
+                        ))}
+                      </Box>
+                    </CardContent>
+                  </Card>
+                </motion.div>
               </Grid>
             ))}
           </Grid>
